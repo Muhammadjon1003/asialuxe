@@ -1,0 +1,17 @@
+@use "../../../scss/styles.scss" as *;
+@use "../../../scss/veriables.scss" as vars;
+
+.routes__section {
+  .inputs__main-box {
+    width: 100%;
+    display: grid;
+    grid-template-columns: [first] 19% [line2] 19% [line3] 24% [col4-start] 19% [five] 19% [end];
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hotel__input-main__box {
+    grid-template-columns: [first] 20% [line2] 40% [line3] 20% [five] 20% [end];
+    justify-content: space-between;
+  }
+}
