@@ -1,7 +1,6 @@
 import React from "react";
 import { DatePicker, Space } from "antd";
 import dayjs from "dayjs";
-import "../single-calendar/calendar";
 import "./TwoWayCalendar.scss";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 import { useGlobalContext } from "../../../../../Context/context";
@@ -12,8 +11,9 @@ export default function TwoWayCalendar() {
   const { disabledDate, disabledRangeTime } = useGlobalContext();
   return (
     <div>
-      <Space direction="vertical" size={12}>
+      <Space style={{ width: "100%" }} direction="vertical" size={12}>
         <RangePicker
+          styles={{ width: "100% !important" }}
           disabledDate={disabledDate}
           disabledTime={disabledRangeTime}
         />

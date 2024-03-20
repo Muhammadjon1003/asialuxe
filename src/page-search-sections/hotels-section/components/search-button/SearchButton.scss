@@ -1,0 +1,30 @@
+@use "../../../../scss/veriables.scss" as vars;
+
+.search-button {
+  width: 100%;
+  background-color: vars.$blue-border-color;
+  border-radius: 5px;
+  border-style: none;
+  color: vars.$white-background-color;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  margin-left: -4px;
+  outline: 0;
+  text-align: center;
+  user-select: none;
+  touch-action: manipulation;
+  vertical-align: bottom;
+  padding: 12px;
+  font-weight: 500;
+}
+
+.search-button:hover {
+  opacity: 0.7;
+}
+
+.search-button:active {
+  transition-duration: 0.35s;
+  background-image: linear-gradient(rgb(0 0 0/30%) 0 0);
+  opacity: 1;
+}
