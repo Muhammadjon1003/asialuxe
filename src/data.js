@@ -4802,3 +4802,5 @@ let hotels = [
     ],
   },
 ];
+
+// export default flights;

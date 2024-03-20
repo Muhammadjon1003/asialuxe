@@ -1,0 +1,228 @@
+body{
+    background-color: #F5FAFF;
+    text-decoration: none;
+}
+.Header{
+    background-color: white;
+    border-radius: 10px;
+}
+.header-title{
+    font-size: 24px;    
+    line-height: normal;
+    margin-bottom: 4px;
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+.button{
+    background-color:#409EFF;
+    color:white;
+    border-radius: 5px;
+    border: none;
+    padding: 7px;
+    cursor: pointer;
+}
+.location{
+    width: 15px;
+    padding-right: 5px;
+
+}
+.location-span{
+    color: blue;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: normal;
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+.rating{
+    width: 200px;
+    position: relative;
+    top: -70px;
+    left: 35px;
+}
+.info{
+    position: relative;
+    top: -130px;
+    left: 35px;
+}
+.images{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    top: -100px;
+    left: 24px;
+}
+.img{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+
+}
+.images1{
+    opacity: 1;
+    height: 100%;
+    width:500px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding-right: 5px;
+    cursor: pointer;
+}
+.images2{
+    width: 400px;
+    height: 165px;
+    margin-bottom: 10px;
+    margin-left: 2px;
+    cursor: pointer;
+}
+.images3{
+    width: 400px;
+    height: 165px;
+    margin-left: 2px;
+    cursor: pointer;
+}
+.images4{
+width: 200px;
+height: 165px;
+margin-bottom: 10px;
+border-top-right-radius:10px;
+margin-left: 5px;
+cursor: pointer;
+
+}
+.images5{
+    width: 200px;
+    height: 165px;
+    border-bottom-right-radius: 10px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+.statistic{
+    width: 300px;
+    background-color:#F6F6F6 ;
+    border-radius: 10px;
+    margin-left: 30px;
+    padding-left: 30px;
+}
+.statistic-title{
+    font-size: 18px;
+    font-weight: 600;
+    line-height: normal;
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+.statistic-name{
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    margin-top: 20px;
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+.name{
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+.saflik{
+    display: flex;
+}
+.Location{
+    display: flex;
+}
+.Power{
+    display: flex;
+}
+.menu{
+    display: flex;
+    /* align-items: center; */
+    flex-direction: column;
+}
+.uls{
+display: flex;
+gap: 100px;
+}
+.hotel_and_informatsion{
+    display: flex;
+    position: relative;
+    top: -70px;
+}
+.informatn{
+    padding-left: 250px;
+}
+.names{
+    margin-left: 30px;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: normal;
+}
+.add{
+    margin-left: 700px;
+    background-color:rgba(255, 255, 255, 0);
+    border: none;
+    padding-bottom: 20px;
+    color: rgb(67, 67, 246);
+    font-size: 15px;
+    text-align:center;
+}
+.referens{
+    margin-top: 30px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+}
+.display_block{
+    display: flex;
+    gap: 15px;
+    padding-top: 10px;
+    font-family: "Roboto Condensed", sans-serif;
+    margin-left: 30px;
+}
+.text{
+    position: relative;
+    top: -15px;
+    /* font-family: "Roboto Condensed", sans-serif; */
+}
+.span1{
+    font-family: "Roboto Condensed", sans-serif;
+    margin-left: 30px;
+    
+}
+.display{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    /* justify-content: center; */
+    font-family: "Roboto Condensed", sans-serif;
+    margin-left: 30px;
+}
+.Error{
+    /* display: flex; */
+    background-color: white;
+    padding: 20px;
+    margin-top: 30px;
+    gap: 10px;
+    border-radius: 10px;
+    
+}
+.pink{
+    background-color: pink;
+    text-align: center;
+    padding-bottom: 5px;
+    border: 1px solid pink;
+    border-radius:10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+.errors{
+    width: 20px;
+}
