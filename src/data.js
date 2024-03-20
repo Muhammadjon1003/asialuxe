@@ -1,4 +1,4 @@
-let flights = [
+export const flights = [
   {
     id: 1,
     depart_place: "Tashkent",
@@ -4802,3 +4802,4 @@ let hotels = [
     ],
   },
 ];
+
