@@ -105,8 +105,8 @@ const Uzbek_charter = () => {
                     <div className='path'>
                         <div className='path_inf'>
                             <div className='path_places'>
-                                <h4 className='path_place'>TAS</h4>
-                                <h4 className='path_place'>AYT</h4>
+                                <h4 className='path_place'>{ticket.depart_place_acr}</h4>
+                                <h4 className='path_place'>{ticket.arrive_place_acr}</h4>
                             </div>
                             <div className='path_road'>
                                 <i class="fa-solid fa-circle one"></i>
