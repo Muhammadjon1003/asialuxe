@@ -1,0 +1,16 @@
+.Choose{
+    width: 100%;
+    height: 110px;
+    background-color: #8fccf4;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Choose__Select{
+    background-color: #fff;
+    width: 95%;
+    height: 50%;
+    border-radius: 10px;
+
+}
