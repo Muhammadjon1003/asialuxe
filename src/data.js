@@ -1,4 +1,4 @@
-let flights = [
+export let flights = [
   {
     id: 1,
     depart_place: "Tashkent",
@@ -2600,6 +2600,9 @@ let flights = [
     type: "there-and-back",
   },
 ];
+
+//! Hotels
+
 let hotels = [
   {
     id: 1,
@@ -4800,5 +4803,26 @@ let hotels = [
       "Essential workers only - NO",
       "Professional property host/manager",
     ],
+  },
+];
+
+export let pessengerAmount = [
+  {
+    id: 1,
+    name: "adult",
+    allow: "From 12 years old",
+    amount: 1,
+  },
+  {
+    id: 2,
+    name: "children",
+    allow: "From 2 to 12",
+    amount: 0,
+  },
+  {
+    id: 3,
+    name: "babies",
+    allow: "Up to 2",
+    amount: 0,
   },
 ];
