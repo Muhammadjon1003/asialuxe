@@ -1,0 +1,98 @@
+.container{
+    padding: 0 20px;
+}
+
+header{
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    z-index: 99;
+    width: 100%;
+    padding: 7px 12px;
+    background-color: #fff;
+    .navbar{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &_logo{
+            width: 124px;
+            cursor: pointer;
+            img{
+                width: 100%;
+            }
+        }
+        &_left{
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            &_agent{
+                background-color: transparent;
+                border: 1px solid #4e95ffc9;
+                transition: all .2s;
+                border-radius: 6px;
+                a{
+                    display: flex;
+                    align-items: center;
+                    text-decoration: none;
+                    padding: 4px 8px;
+                    height: 32px;
+                    font-size: 18px;
+                    color: #373839;
+                    gap: 4px;
+                    ion-icon{
+                        width: 18px;
+                        height: 18px;
+                        color: #4e95ffc9;
+                    }    
+                }
+                &:hover{
+                    background-color: #0D6EFD;
+                    a{
+                        color: #fff;
+                        ion-icon{
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+            &_til{
+                display: flex;
+                padding: 6px 14px;
+                align-items: center;
+                transition: all 0.2s;
+                border: 1px solid #4e95ffc9;
+                background-color: transparent;
+                color: #000000cf;
+                border-radius: 6px;
+                font-size: 14px;
+                cursor: pointer;
+                gap: 4px;
+                ion-icon{
+                    width: 18px;
+                    height: 18px;
+                    color: #4e95ffc9;
+                }
+                &:hover{
+                    color: #0D6EFD;
+                    border-color: #0D6EFD40;
+                    background-color: #0D6EFD20;
+                    ion-icon{
+                        color: #0D6EFD;
+                    }
+                }
+            }
+            &_menu{
+                border: none;
+                background-color: transparent;
+                cursor: pointer;
+                height: 32px;
+                width: 32px;
+                ion-icon{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
