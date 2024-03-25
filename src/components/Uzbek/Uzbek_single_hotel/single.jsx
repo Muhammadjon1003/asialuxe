@@ -1,7 +1,8 @@
 // import React from 'react'
 import { useState } from "react";
 import "./Uzbek_single_hotel.css"
-import { hotels } from "../../../data";
+import { useParams } from "react-router";
+import { hotels } from "../../../Context/data";
 
 export default function Single() {
   const [saflık, setSaflık] = useState(92);
@@ -9,8 +10,6 @@ export default function Single() {
   const[power, setPower]=useState(90);
   const [buttonClicked, setButtonClicked] = useState(false);
   
-  
- 
 
   const handleButtonClick = () => {
     setButtonClicked(!buttonClicked);
@@ -25,8 +24,13 @@ export default function Single() {
   const handleChangs = (event) => {
     setPower(event.target.value);
   };
-  let hotel = hotels[0]
-  const {id, title, main_image, other_images, hotel_amenities, information} = hotel
+  const { id } = useParams()
+  let hotel = hotels.find(hotel => hotel.id == id)
+  const { title, main_image, other_images, hotel_amenities, information} = hotel
+ let shortHotelAMenities1 = hotel_amenities.slice(0,10)
+ let shortHotelAMenities2 = hotel_amenities.slice(10,20)
+ let longHotelAMenities1 = hotel_amenities.slice(0,44)
+ let longHotelAMenities2 = hotel_amenities.slice(44,89)
   return (
     <div className="bodys">
       <div className="container">
@@ -35,7 +39,7 @@ export default function Single() {
           <div className="Header_block">
               <img className="rating" src="rating.png" alt="" />
             <div className="info">
-             <h1 className="header-title">Titanic Luxury Collection Bodrum</h1>
+             <h1 className="header-title">{title}</h1>
              <a href="#"><img className="location" src="location.png" alt="" /><span className="location-span">Show on map</span></a>
              <br />
              <br />
@@ -44,12 +48,12 @@ export default function Single() {
            
             <div className="images">
              <img className="images1" src={main_image} alt="" />
-              <div className="img">
+              <div className="img1">
                <img className="images2" src={other_images[0]} alt="" />
                <img className="images3" src={other_images[1]} alt="" />
               </div>
               
-              <div className="img">
+              <div className="img2">
                <img className="images4" src={other_images[2]} alt="" />
                <img className="images5" src={other_images[3]} alt="" />
               </div>
@@ -102,55 +106,52 @@ export default function Single() {
                 <h1 className="names">Main hotel amenities</h1>
                 <div className="uls">
                   
-                  <ul className="menu" >
-                    {hotel_amenities.slice(0, 9).map((amenity, index) => (
-                     <li key={index}>{amenity}</li>
-                    ))}
+                 
+                  {buttonClicked ? (
+  <div className="menu">
+    <ul>
+      {longHotelAMenities1.map((amenity, index) => (
+        <li key={index}>{amenity}</li>
+      ))}
+    </ul>
+    <ul>
+      {longHotelAMenities2.map((amenity, index) => (
+        <li key={index}>{amenity}</li>
+      ))}
+    </ul>
+  </div>
+) : (
+  <div className="menu">
+    <ul>
+      {shortHotelAMenities1.map((amenity, index) => (
+        <li key={index}>{amenity}</li>
+      ))}
+    </ul>
+    <ul>
+      {shortHotelAMenities2.map((amenity, index) => (
+        <li key={index}>{amenity}</li>
+      ))}
+    </ul>
+  </div>
+)}
 
-                    <div className="secret" style={{ display: buttonClicked ? 'block' : 'none' }}>
-                      {hotel_amenities.slice(9, 34).map((amenity, index) => (
-                       <li key={index}>{amenity}</li>
-                      ))}
-                    
-                      <br />
-                   
-                      {hotel_amenities.slice(34, 44).map((amenity, index) => (
-                       <li key={index}>{amenity}</li>
-                      ))}
-                    </div>
 
-                  </ul>
-                     
-                  <ul> 
-                    {hotel_amenities.slice(44, 53).map((amenity, index) => (
-                     <li key={index}>{amenity}</li>
-                    ))}
-                                    
-                    <div className="secret" style={{ display: buttonClicked ? 'block' : 'none' }}>
-                      {hotel_amenities.slice(53, 88).map((amenity, index) => (
-                     <li key={index}>{amenity}</li>
-                      ))}
-                    </div>
-                  </ul>
                 </div>
               </div>
 
               <div className="informatn">
                 <h1 className="names">Information</h1>
                 <ul>
-                  {information.slice(0, 5).map((amenity, index) => (
+                  {information.map((amenity, index) => (
                     <li key={index}>{amenity}</li>
                   ))}
-
-                  <div className="secret"style={{ display: buttonClicked ? 'block' : 'none' }}>
-                    <li>Commonly-touched surfaces are cleaned with disinfectant</li>
-                    <li>Property follows sanitization practices of COVID-19 Guidelines <br />(WHO)</li>
-                  </div>
                 </ul>
               </div>
               
             </div>
-            <button className="add" onClick={handleButtonClick}>Show more</button>
+            <div className="add_container">
+            <button className="add" onClick={handleButtonClick}>{buttonClicked ? 'Show less' : 'Show more'}</button>
+            </div>
           </div>
         </div>
          

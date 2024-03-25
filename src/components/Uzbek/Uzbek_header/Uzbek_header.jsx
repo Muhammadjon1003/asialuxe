@@ -23,7 +23,7 @@ const Uzbek_header = () => {
   return (
     <>
       <header>
-        <div className="container">
+        <div className="header_container">
           <nav className="navbar">
             <div className="navbar_logo">
               <img

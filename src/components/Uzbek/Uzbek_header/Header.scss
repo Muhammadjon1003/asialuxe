@@ -1,5 +1,5 @@
-.container{
-    padding: 0 20px;
+.header_container{
+    padding: 0 10px;
 }
 
 header{
@@ -30,6 +30,7 @@ header{
                 background-color: transparent;
                 border: 1px solid #4e95ffc9;
                 transition: all .2s;
+                padding: 1px !important;
                 border-radius: 6px;
                 a{
                     display: flex;

@@ -1,6 +1,12 @@
 import React from "react";
 import TourPageSearch from "../search-section/main-pages/TourPageSearch";
+import Navbar from "../Navbar/Navbar";
 
 export default function Tours() {
-  return <TourPageSearch />;
+  return (
+    <div>
+      <Navbar />
+      <TourPageSearch />
+    </div>
+  );
 }
