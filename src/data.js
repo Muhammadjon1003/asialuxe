@@ -4802,3 +4802,18 @@ let hotels = [
     ],
   },
 ];
+let all_months = [
+  'Yanvar',
+  'Fevral',
+  "Mart",
+  "Aprel",
+  'May',
+  'Iyun',
+  'Iyul',
+  'Avgust',
+  'Sentabr',
+  'Oktabr',
+  'Noyabr',
+  'Dekabr'
+]
+export {flights, hotels, all_months}

@@ -1,0 +1,77 @@
+.lenguage {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  z-index: 90;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.4078431373);
+}
+.lenguage .menu {
+  background-color: #fff;
+  align-items: flex-start;
+  flex-direction: column;
+  border-radius: 2px;
+  max-width: 772px;
+  display: flex;
+  padding: 16px;
+  width: 100%;
+  gap: 16px;
+}
+.lenguage .menu_top {
+  width: 100%;
+  display: flex;
+  align-items: first baseline;
+  justify-content: space-between;
+}
+.lenguage .menu_top h3 {
+  font-size: 20px;
+  font-weight: 400;
+  color: #000000;
+}
+.lenguage .menu_close ion-icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.lenguage .menu_close ion-icon:hover {
+  color: rgba(50, 132, 255, 0.7882352941);
+}
+.lenguage .menu_sel {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.lenguage .menu_sel label {
+  font-size: 16px;
+  line-height: 20px;
+  color: #444444;
+}
+.lenguage .menu_sel select {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  transition: 0.2s;
+  border-radius: 4px;
+  border: 1px solid #b8b8b8;
+}
+.lenguage .menu_sel select:hover {
+  border-color: #999;
+}
+.lenguage .menu_saqlash {
+  width: 100%;
+  border: none;
+  padding: 10px;
+  color: #fff;
+  border-radius: 4px;
+  background-color: #3787ff;
+  transition: all 0.1s ease-in-out;
+}
+.lenguage .menu_saqlash:hover {
+  background-color: rgba(13, 109, 253, 0.6549019608);
+}/*# sourceMappingURL=Lenguage.css.map */
