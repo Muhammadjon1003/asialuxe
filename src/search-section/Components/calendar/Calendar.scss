@@ -1,0 +1,134 @@
+@use "../../../scss/veriables.scss" as vars;
+.react-datepicker__month-container {
+  width: 250px;
+  height: 310px;
+}
+
+.react-datepicker__header {
+  padding: 10px 0px 0px 0px;
+  background-color: transparent;
+}
+
+.react-datepicker__navigation {
+  color: red !important;
+  background-color: transparent;
+  border: 1px solid vars.$radio-blue-color;
+  border-radius: 50%;
+  top: 6px;
+
+  &--previous {
+    padding: 8px 9px 4px 0px !important;
+  }
+  &--next {
+    padding: 8px 0px 4px 9px !important;
+  }
+}
+
+.react-datepicker__navigation-icon {
+  &::before {
+    font-size: 14px !important;
+    color: vars.$day-name-color !important;
+    border-width: 1px 1px 0 0 !important;
+    width: 6px;
+    height: 6px;
+    &:hover {
+      border-color: vars.$radio-blue-color !important;
+    }
+  }
+}
+
+.react-datepicker__navigation--previous {
+  left: 6px;
+}
+
+.react-datepicker__navigation--next {
+  right: 6px;
+}
+
+.react-datepicker__day-names {
+  padding: 10px 0px 5px 0px;
+}
+.react-datepicker__day {
+  color: vars.$black-text-color !important;
+  border-radius: 50%;
+  transition: all 0.4s ease-in-out;
+
+  &:hover {
+    border-radius: 50%;
+    color: vars.$radio-blue-color !important;
+    background-color: transparent !important;
+  }
+
+  &:focus {
+    color: vars.$white-background-color !important;
+    background-color: vars.$radio-blue-color !important;
+  }
+}
+
+.react-datepicker__day--selected {
+  color: vars.$white-background-color !important;
+  background-color: vars.$radio-blue-color !important;
+}
+
+.react-datepicker__day--today {
+  font-weight: 400 !important;
+}
+
+.react-datepicker__week {
+  padding: 3px 5px !important;
+}
+
+.react-datepicker__day--keyboard-selected {
+  background-color: transparent !important;
+}
+
+.react-datepicker__day--outside-month {
+  color: vars.$input-border-hover-btn !important;
+}
+
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+.react-datepicker__input-container {
+  width: 100% !important;
+}
+
+.react-datepicker__input-container input {
+  padding: 10px 90px 10px 10px;
+  border-radius: 4px;
+  border: 1.5px solid vars.$date-color;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+
+  &:focus {
+    border-color: vars.$radio-blue-color;
+  }
+
+  &:hover {
+    border-color: vars.$day-name-color;
+  }
+
+  &::placeholder {
+    color: vars.$date-color;
+    opacity: 0.7;
+    font-size: 12px;
+  }
+}
+
+.double__date-wrapper {
+  display: flex;
+}
+
+.single__date-picker {
+  width: 100%;
+}
+
+.end__date-picker {
+  width: 50%;
+}
+
+.start__date-picker {
+  width: 50%;
+}
