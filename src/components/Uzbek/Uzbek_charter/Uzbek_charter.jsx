@@ -21,7 +21,7 @@ const Uzbek_charter = () => {
         <div className="charter">
         <div className="charter_right">
             <div className="ticket_prices">
-                <h4>Стоимость авиабилета</h4>
+                <h4>Avia chiptasi narxi</h4>
                 <div className='ticket_prices-box'>
                     <div className='ticket_prices-top'>
                         <i class="fa-regular fa-circle one"></i>
@@ -36,7 +36,7 @@ const Uzbek_charter = () => {
             </div>
             <hr />
             <div className="charter_right-items">
-                <h4>Пересадки</h4>
+                <h4>O'tkazmalar</h4>
                 <div className='charter_checkbox'>
                     <input type="checkbox" />
                     <h5>Без пересадка</h5>
@@ -44,7 +44,7 @@ const Uzbek_charter = () => {
             </div>
             <hr />
             <div className="charter_right-items">
-                <h4>Авиакомпании</h4>
+                <h4>Havo yo'llari</h4>
                 <div className='charter_checkbox'>
                     <input type="checkbox" />
                     <h5>Uzbekistan Airways</h5>
@@ -52,15 +52,15 @@ const Uzbek_charter = () => {
             </div>
             <hr />
             <div className="charter_right-items">
-                <h4>Опции</h4>
+                <h4>Options</h4>
                 <div className='charter_checkbox'>
                     <input type="checkbox" />
-                    <h5>С багажом</h5>
+                    <h5>Yuki bilan</h5>
                 </div>
             </div>
             <hr />
             <div className="charter_right-items">
-                <h4>Время вылета</h4>
+                <h4>Ketish vaqti</h4>
                 <div className='charter_checkbox'>
                     <input type="checkbox" />
                     <h5>{ticket.depart_time}</h5>
@@ -68,7 +68,7 @@ const Uzbek_charter = () => {
             </div>
             <hr />
             <div className="charter_right-items">
-                <h4>Время прилета</h4>
+                <h4>Kerish vaqti</h4>
                 <div className='charter_checkbox'>
                     <input type="checkbox" />
                     <h5>{ticket.arrive_time}</h5>
