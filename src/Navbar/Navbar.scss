@@ -1,0 +1,35 @@
+@use "../scss/veriables.scss" as vars;
+.navbar {
+  max-width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__links {
+  padding: 10px;
+  border: 2px solid vars.$navbar-border-color;
+  border-radius: 10px;
+  font-size: 14px;
+  color: vars.$navbar-color;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3px;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    p {
+      color: vars.$radio-blue-color;
+    }
+  }
+
+  &.active {
+    border-color: vars.$radio-blue-color;
+  }
+}
+
+.navbar__icons {
+  color: vars.$radio-blue-color;
+  font-size: 18px;
+}

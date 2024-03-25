@@ -1,0 +1,186 @@
+@use "../../../../scss/veriables.scss" as vars;
+
+.sec-center {
+  position: relative;
+  text-align: center;
+  z-index: 200;
+  background-color: vars.$white-background-color;
+  padding: 8px;
+  text-align: center;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  border: 1.5px solid vars.$date-color;
+  margin-right: 4px;
+  width: 100%;
+
+  &:hover {
+    border-color: vars.$day-name-color;
+  }
+}
+
+.arrow-down {
+  color: vars.$day-name-color;
+}
+
+[type="checkbox"]:checked,
+[type="checkbox"]:not(:checked) {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  pointer-events: none;
+  cursor: pointer;
+}
+
+.dropdown:checked + label:before,
+.dropdown:not(:checked) + label:before {
+  position: fixed;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  z-index: -1;
+  cursor: pointer;
+  pointer-events: none;
+}
+
+.dropdown:checked + label:before {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.section-dropdown {
+  position: absolute;
+  padding: 5px;
+  background-color: vars.$white-background-color;
+  top: 50px;
+  right: -45px;
+  width: 272px;
+  padding: 20px;
+  border-radius: 4px;
+  display: block;
+  box-shadow: 0 14px 35px 0 rgba(9, 9, 12, 0.4);
+  z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+  cursor: pointer;
+  transition: all 200ms linear;
+  display: none;
+}
+
+.dropdown-pessager {
+  width: 100%;
+}
+
+.dropdown:checked ~ .section-dropdown {
+  opacity: 1;
+  display: block;
+  pointer-events: auto;
+  transform: translateY(0);
+  cursor: pointer;
+}
+.section-dropdown:before {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  content: "";
+  display: block;
+  z-index: 1;
+  cursor: pointer;
+}
+.section-dropdown:after {
+  position: absolute;
+  top: -7px;
+  left: 127px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid vars.$white-background-color;
+  content: "";
+  display: block;
+  z-index: 2;
+  transition: all 200ms linear;
+  cursor: pointer;
+}
+.dark-light:checked ~ .sec-center .section-dropdown:after {
+  border-bottom: 8px solid vars.$white-background-color;
+}
+
+.for-dropdown {
+  cursor: pointer;
+}
+
+.passenger-category {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+
+  .passenger-category-wrapper {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+  }
+
+  span {
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+
+  .counter {
+    display: flex;
+    align-items: center;
+    border: 1px solid vars.$counter-button-color;
+    width: 90px;
+    border-radius: 4px;
+
+    button {
+      width: 30%;
+      padding: 7px 7px;
+      background-color: vars.$counter-button-color;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+
+      &:hover {
+        color: vars.$blue-border-color;
+      }
+
+      &.disabled {
+        cursor: not-allowed;
+
+        &:hover {
+          color: vars.$input-border-hover-btn;
+        }
+      }
+    }
+
+    span {
+      margin: 0 10px;
+      width: 40%;
+    }
+
+    &:hover {
+      border-color: vars.$blue-border-color;
+    }
+  }
+
+  .age-range {
+    font-size: 0.8em;
+    color: vars.$age-range-color;
+  }
+}
+.tour__selects {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
