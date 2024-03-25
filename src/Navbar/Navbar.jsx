@@ -12,14 +12,13 @@ import "./Navbar.scss";
 export default function Navbar() {
   const location = useLocation();
   const [activeLink, setActiveLink] = useState(location.pathname);
-
-  const handleLinkClick = (path) => {
+const handleLinkClick = (path) => {
     setActiveLink(path);
   };
 
   return (
     <div className="container">
-      <div className="navbar">
+      <div className="buttons_navbar">
         <Link
           to={"/"}
           className={`navbar__links ${activeLink === "/" ? "active" : ""}`}
@@ -28,7 +27,6 @@ export default function Navbar() {
           <FontAwesomeIcon icon={faPlane} className="navbar__icons" />
           &nbsp; <p>All tickets</p>
         </Link>
-
         <Link
           to={"/hotel"}
           className={`navbar__links ${activeLink === "/hotel" ? "active" : ""}`}

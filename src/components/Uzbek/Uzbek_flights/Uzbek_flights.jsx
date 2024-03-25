@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { all_months, flights } from "../../../data";
 import "./flights.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { all_months, flights } from "../../../Context/data";
 const Flights = () => {
   const [activePlace, setActivePlace] = useState("Antalya");
   const [activeMonth, setActiveMonth] = useState("Mart");
@@ -47,6 +46,14 @@ const Flights = () => {
     // Return the formatted time string
     return `${newHoursStr}:${newMinutesStr}`;
 }
+const removeLeadingZeroFromDate = (day) => {
+  // Split the date string into components
+  
+  // Remove leading zero from day and month if present
+  const formattedDay = day.startsWith('0') ? day.substring(1) : day;
+  // Return formatted date string
+  return `${formattedDay}`;
+};
 
   const startMonthIndex = all_months.indexOf("Mart");
   const months = all_months.slice(startMonthIndex);
@@ -104,7 +111,7 @@ const Flights = () => {
             return (
               <div key={id} className="flight">
                 <div className="date">
-                  <span>{getDayFromDate(depart_date)}</span>
+                  <span>{removeLeadingZeroFromDate(getDayFromDate(depart_date))}</span>
                   <p>{getMonthFromDate(depart_date)}</p>
                 </div>
                 <div className="single_flight1">

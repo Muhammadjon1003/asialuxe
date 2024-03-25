@@ -4970,7 +4970,20 @@ export let hotels = [
     ],
   },
 ];
-
+export let all_months = [
+  'Yanvar',
+  'Fevral',
+  "Mart",
+  "Aprel",
+  'May',
+  'Iyun',
+  'Iyul',
+  'Avgust',
+  'Sentabr',
+  'Oktabr',
+  'Noyabr',
+  'Dekabr'
+]
 export let pessengerAmount = [
   {
     id: 1,
@@ -4991,4 +5004,3 @@ export let pessengerAmount = [
     amount: 0,
   },
 ];
-
