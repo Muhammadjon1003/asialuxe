@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.imagess {
+width: 100%;
+height: 100%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.texth1 {
+  font-family: "Times New Roman", Times, serif;
+}
+.card_text {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  padding: 10px;
+  gap: 15px;
+}
+.card_text p{
+  font-family: "Roboto Condensed";
+  font-size: 15px;
+  padding-left: 10px;
+  color: gray;
+}
+.title {
+  padding-left: 10px;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 400;
+  font-family: "Roboto Condensed";
+}
+.parag {
+  padding-left: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+.card_img {
+  display: flex;
+}
+.card {
+  width: 230px;
+  height: 250px;
+  border: solid 0.5px rgb(106, 106, 106);
+  border-radius: 15px;
+}
+.main_div {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 28px;
+flex-wrap: wrap;
+margin-top: 30px;
+padding-bottom: 30px;
+}
+.card:hover {
+  cursor: pointer;
+  /* transform: scale(1.03); */
+  /* border: solid 1px rgb(106, 106, 106); */
+  box-shadow: 0 4px 4px #00000040;
+   transition: 0.2s;
+   .title{
+    color: #0a58ca;
+  }
+}
+
+.List {
+  padding-left: 20px;
+}

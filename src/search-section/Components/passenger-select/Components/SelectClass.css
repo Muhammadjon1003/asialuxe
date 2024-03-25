@@ -1,0 +1,20 @@
+.ant-select {
+  width: 100% !important;
+}
+
+.ant-select-selector {
+  width: 100% !important;
+  align-items: center !important;
+  height: 40px !important;
+  margin-top: -1px !important;
+}
+
+.ant-select-selection-item {
+  text-align: start;
+  align-items: center;
+}
+
+.ant-select-arrow {
+  text-align: center;
+  padding-top: 4px;
+}/*# sourceMappingURL=SelectClass.css.map */

@@ -69,7 +69,7 @@ const removeLeadingZeroFromDate = (day) => {
   return (
     <>
       <div className="container">
-            <h4>Yo'nalishlar</h4>
+            <h4 className="main_title">Yo'nalishlar</h4>
         <div className="places">
           {places.map((place, index) => (
             <button
@@ -81,7 +81,7 @@ const removeLeadingZeroFromDate = (day) => {
             </button>
           ))}
         </div>
-            <h4>Sanalar</h4>
+            <h4 className="main_title">Sanalar</h4 >
         <div className="months">
           {months.map((month) => (
             <button

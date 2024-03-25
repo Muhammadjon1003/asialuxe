@@ -1,0 +1,124 @@
+.avia__inputs {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+}
+
+.avia__inputs-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.avia__input {
+  padding: 10px 60px 10px 15px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  border: 1.5px solid #a8abb2;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+.avia__input:focus {
+  border-color: #409eff;
+}
+.avia__input:hover {
+  border-color: #606266;
+}
+.avia__input::-moz-placeholder {
+  color: #a8abb2;
+  opacity: 0.7;
+  font-size: 12px;
+}
+.avia__input::placeholder {
+  color: #a8abb2;
+  opacity: 0.7;
+  font-size: 12px;
+}
+
+.input__plane {
+  color: #409eff;
+  position: absolute;
+  z-index: 1;
+  right: 20px;
+  top: 12px;
+}
+
+.directions__image {
+  width: 25px;
+  height: 24px;
+  position: absolute;
+  z-index: 1;
+  right: -12px;
+  top: 7px;
+}
+
+.recommend__wrapper {
+  position: relative;
+  list-style: none;
+}
+
+.recommend__start-list {
+  position: absolute;
+  width: 240px;
+  background-color: white;
+  box-shadow: 0px 10px 24px -10px rgba(0, 0, 0, 0.75);
+  z-index: 1;
+  top: 50px;
+  left: 0;
+  padding: 10px 0px;
+  border-radius: 5px;
+}
+
+.recommend__list {
+  position: absolute;
+  width: 230px;
+  background-color: white;
+  box-shadow: 0px 10px 24px -10px rgba(0, 0, 0, 0.75);
+  top: 12px;
+  left: 0px;
+  padding: 10px 0px;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+.recommend__list li,
+.recommend__start-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 20px;
+  cursor: pointer;
+}
+.recommend__list li:hover,
+.recommend__start-list li:hover {
+  background-color: rgba(52, 46, 46, 0.078);
+}
+
+.recommended__list-hotel {
+  width: 260px;
+}
+
+.hotel__recommend-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.hotel__country {
+  font-size: 16px;
+  text-transform: capitalize !important;
+}
+
+.hotel__title {
+  font-size: 12px;
+}
+
+.location__dot {
+  color: #409eff;
+  font-size: 22px;
+}
+
+.tours__recommendation {
+  display: flex;
+  gap: 15px;
+}/*# sourceMappingURL=InputsScss.css.map */

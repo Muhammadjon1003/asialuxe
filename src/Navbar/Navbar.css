@@ -1,0 +1,31 @@
+.buttons_navbar {
+  margin-top: 100px;
+  max-width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__links {
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #212529;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3px;
+  transition: all 0.3s ease-in-out;
+}
+.navbar__links:hover p {
+  color: #409eff;
+}
+.navbar__links.active {
+  border-color: #409eff;
+}
+
+.navbar__icons {
+  color: #409eff;
+  font-size: 18px;
+}/*# sourceMappingURL=Navbar.css.map */
