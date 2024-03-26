@@ -125,9 +125,11 @@ const SingleFlight = () => {
                 </div>
             </div>
             <div className='charter_buy'>
-                <h2 className='ticket_price'>{ticket.price} USD</h2>
-                <button className='ticket_buy-btn'>Купить</button>
-            </div>
+            <h2 className='ticket_price'>{ticket.price} USD</h2>
+            <button className='ticket_buy-btn' onClick={() => {
+                window.location.href = '/reservation';
+            }}>Купить</button>
+        </div>
         </div>
         </div>
     )

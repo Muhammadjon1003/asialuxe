@@ -9,6 +9,7 @@ import Uzbek_header from "./components/Uzbek/Uzbek_header/Uzbek_header";
 import Flights from "./components/Uzbek/Uzbek_flights/Uzbek_flights";
 import Single from "./components/Uzbek/Uzbek_single_hotel/single";
 import SingleFlight from "./components/Uzbek/Uzbek_charter/single_flight";
+import Reservation from "./components/Uzbek/Reservation/reservation";
 function App() {
   return (
     <>
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Navigate to="/avia" />} />
         <Route path="/avia" element={<Avia />} />
+        <Route path="/reservation" element={<Reservation />} />
         <Route path="/hotel" element={<Hotels />} />
         <Route path="/hotel/:id" element={<Single />} />
         <Route path="/tour" element={<Tours />} />
