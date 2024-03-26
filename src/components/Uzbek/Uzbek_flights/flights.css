@@ -4,6 +4,8 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Roboto Condensed";
+  text-decoration: none;
+  color: inherit;
 }
 
 .container {

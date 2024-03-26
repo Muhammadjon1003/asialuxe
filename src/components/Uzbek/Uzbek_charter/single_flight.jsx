@@ -2,14 +2,14 @@ import './Uzbek_charter.css'
 import airways from '../../../assets/HY.avif'
 import { useGlobalContext } from '../../../Context/context.jsx';
 import { flights } from '../../../Context/data.jsx';
+import { useParams } from 'react-router';
 
 // import { useParams } from 'react-router-dom'
 
-const Uzbek_charter = () => {
+const SingleFlight = () => {
     
-    const {filteredId} = useGlobalContext()
-    console.log(filteredId);
-    const ticket = flights.find(ticket => ticket.id === parseInt(filteredId[0]))
+    const {id} = useParams()
+    const ticket = flights.find(ticket => ticket.id === parseInt(id))
 
     //path_time
     const [departHours, departMinutes] = ticket.depart_time.split(":").map(Number);
@@ -25,8 +25,8 @@ const Uzbek_charter = () => {
                 <h4>Avia chiptasi narxi</h4>
                 <div className='ticket_prices-box'>
                     <div className='ticket_prices-top'>
-                        <i class="fa-regular fa-circle one"></i>
-                        <i class="fa-regular fa-circle two"></i>
+                    <i className="fa-regular fa-circle one"></i>
+                        <i className="fa-regular fa-circle two"></i>
                         <hr className='price_line'/>
                     </div>
                     <div className='ticket_prices-bottom'>
@@ -133,4 +133,4 @@ const Uzbek_charter = () => {
     )
 }
 
-export default Uzbek_charter;
+export default SingleFlight;

@@ -22,8 +22,10 @@ const AppProvider = ({ children }) => {
   const [typingArrival, setTypingArrival] = useState(false);
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
-  const [filteredId, setFilteredId] = useState([]);
+  const [filteredId, setFilteredId] = useState(null);
   const [itemSelected, setItemSelected] = useState(false);
+  const [isSearched, setisSearched] = useState(false);
+  const [redirect, setredirect] = useState(false);
   const [selectedChild, setSelectedChild] = useState("");
   const [allPassengers, setAllPassengers] = useState(null);
   const [selectedClass, setSelectedClass] = useState("");
@@ -102,12 +104,14 @@ const AppProvider = ({ children }) => {
     }
 
     setFilteredId(filteredIds);
+    setisSearched(true)
     setStartDate(null);
     setEndDate(null);
     setDeparturePlace("");
     setArrivalPlace("");
+    setredirect(true)
   };
-
+console.log(redirect);
   const handleDepartureLiClick = (departPlace) => {
     setDeparturePlace(departPlace);
     setTypingDeparture(false);
@@ -194,6 +198,8 @@ const AppProvider = ({ children }) => {
     setAllPassengers,
     setSelectedClass,
     location,
+    filteredId,
+    isSearched, redirect
   };
 
   return (

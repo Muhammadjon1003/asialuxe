@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./flights.css";
 import { all_months, flights } from "../../../Context/data";
+import { useGlobalContext } from "../../../Context/context";
+import { Link } from "react-router-dom";
 const Flights = () => {
   const [activePlace, setActivePlace] = useState("Antalya");
   const [activeMonth, setActiveMonth] = useState("Mart");
@@ -54,18 +56,17 @@ const removeLeadingZeroFromDate = (day) => {
   // Return formatted date string
   return `${formattedDay}`;
 };
-
   const startMonthIndex = all_months.indexOf("Mart");
   const months = all_months.slice(startMonthIndex);
   const filteredFlights = flights.filter((flight) => {
     const month = getMonthFromDate(flight.depart_date);
     return flight.arrive_place === activePlace && month === activeMonth;
   });
-  const sortedFlights = filteredFlights.sort((a, b) => {
+  let sortedFlights = filteredFlights.sort((a, b) => {
     const dateA = new Date(a.depart_date);
     const dateB = new Date(b.depart_date);
     return dateA - dateB;
-  });
+  })
   return (
     <>
       <div className="container">
@@ -109,6 +110,7 @@ const removeLeadingZeroFromDate = (day) => {
               depart_date,
             } = filteredFlight;
             return (
+             <Link to={`/charter/${id}`}>
               <div key={id} className="flight">
                 <div className="date">
                   <span>{removeLeadingZeroFromDate(getDayFromDate(depart_date))}</span>
@@ -159,6 +161,7 @@ const removeLeadingZeroFromDate = (day) => {
                 </div>
                 ) : null}
               </div>
+             </Link>
             );
           })}
         </div>
