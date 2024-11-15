@@ -1,7 +1,6 @@
 import { useState } from "react";
-import "./flights.css";
+import "./Uzbek_flights.scss";
 import { all_months, flights } from "../../../Context/data";
-import { useGlobalContext } from "../../../Context/context";
 import { Link } from "react-router-dom";
 const Flights = () => {
   const [activePlace, setActivePlace] = useState("Antalya");
@@ -68,54 +67,56 @@ const removeLeadingZeroFromDate = (day) => {
     return dateA - dateB;
   })
   return (
-    <>
-      <div className="container">
-            <h4 className="main_title">Yo'nalishlar</h4>
-        <div className="places">
-          {places.map((place, index) => (
-            <button
-              key={place}
-              className={activePlace === place ? "active_place" : ""}
-              onClick={() => handlePlace(place)}
-            >
-              {place}
-            </button>
-          ))}
-        </div>
-            <h4 className="main_title">Sanalar</h4 >
-        <div className="months">
-          {months.map((month) => (
-            <button
-              key={month}
-              className={activeMonth === month ? "active_place" : ""}
-              onClick={() => handleMonth(month)}
-            >
-              {month}
-            </button>
-          ))}
-        </div>
-        <div className="flights">
-          {sortedFlights.map((filteredFlight) => {
-            const {
-              id,
-              depart_place,
-              arrive_place,
-              depart_time,
-              arrive_time,
-              is_seats_available,
-              price,
-              depart_place_acr,
-              arrive_place_acr,
-              type,
-              depart_date,
-            } = filteredFlight;
-            return (
-             <Link to={`/charter/${id}`}>
-              <div key={id} className="flight">
-                <div className="date">
-                  <span>{removeLeadingZeroFromDate(getDayFromDate(depart_date))}</span>
-                  <p>{getMonthFromDate(depart_date)}</p>
-                </div>
+    <div className="flights_wrapper">
+      <h4 className="main_title">Yo'nalishlar</h4>
+      <div className="places">
+        {places.map((place, index) => (
+          <button
+            key={place}
+            className={activePlace === place ? "active_place" : ""}
+            onClick={() => handlePlace(place)}
+          >
+            {place}
+          </button>
+        ))}
+      </div>
+      
+      <h4 className="main_title">Sanalar</h4>
+      <div className="months">
+        {months.map((month) => (
+          <button
+            key={month}
+            className={activeMonth === month ? "active_place" : ""}
+            onClick={() => handleMonth(month)}
+          >
+            {month}
+          </button>
+        ))}
+      </div>
+
+      <div className="flights_list">
+        {sortedFlights.map((filteredFlight) => {
+          const {
+            id,
+            depart_place,
+            arrive_place,
+            depart_time,
+            arrive_time,
+            is_seats_available,
+            price,
+            depart_place_acr,
+            arrive_place_acr,
+            type,
+            depart_date,
+          } = filteredFlight;
+          return (
+           <Link to={`/charter/${id}`}>
+            <div key={id} className="flight">
+              <div className="date">
+                <span>{removeLeadingZeroFromDate(getDayFromDate(depart_date))}</span>
+                <p>{getMonthFromDate(depart_date)}</p>
+              </div>
+              <div className="flight-container">
                 <div className="single_flight1">
                   <div className="acronyms">
                     <p>{depart_place_acr} <img src="right.svg" alt="right" className="right"/></p>
@@ -129,9 +130,9 @@ const removeLeadingZeroFromDate = (day) => {
                   </div>
                   <div className="times">
                   {is_seats_available ? (
-                      <p><img src="check.svg" alt="true"  className="right"/> Joylar mavjud</p>
+                      <div className="seat_availability"><img src="check.svg" alt="true"  className="right"/> <p>Joylar mavjud</p></div>
                     ) : (
-                      <p><img src="xmark.svg" alt="false" className="right" /> Joylar mavjud emas</p>
+                      <div className="seat_availability"><img src="xmark.svg" alt="false" className="right" /> <p>Joylar mavjud emas</p></div>
                     )}
                     <p className="gray_text">${price} </p>
                     <p>{separateThousands(price* 12500)} so'm</p>
@@ -151,9 +152,9 @@ const removeLeadingZeroFromDate = (day) => {
                   </div>
                   <div className="times">
                   {is_seats_available ? (
-                      <p><img src="check.svg" alt="true"  className="right"/> Joylar mavjud</p>
+                      <div className="seat_availability"><img src="check.svg" alt="true"  className="right"/> <p>Joylar mavjud</p></div>
                     ) : (
-                      <p><img src="xmark.svg" alt="false" className="right" /> Joylar mavjud emas</p>
+                      <div className="seat_availability"><img src="xmark.svg" alt="false" className="right" /> <p>Joylar mavjud emas</p></div>
                     )}
                     <p className="gray_text">${price} </p>
                     <p>{separateThousands(price* 12500)} so'm</p>
@@ -161,12 +162,12 @@ const removeLeadingZeroFromDate = (day) => {
                 </div>
                 ) : null}
               </div>
-             </Link>
-            );
-          })}
-        </div>
+            </div>
+           </Link>
+          );
+        })}
       </div>
-    </>
+    </div>
   );
 };
 export default Flights;

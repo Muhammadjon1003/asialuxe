@@ -1,23 +1,16 @@
 import React from "react";
-import AviaPageSearch from "../search-section/main-pages/AviaPageSearch";
 import Flights from "../components/Uzbek/Uzbek_flights/Uzbek_flights";
-import Navbar from "../Navbar/Navbar";
-import Hotels from "./Hotels";
-import Products from "../components/Uzbek/Uzbek_tours/Products/Products";
-import Uzbek_hotels from "../components/Uzbek/Uzbek_hotels/Uzbek_hotels";
-
-function onChange(params) {
-  console.log(params);
-}
+import SearchSection from "../search-section/main-pages/SearchSection";
+import Uzbek_header from "../components/Uzbek/Uzbek_header/Uzbek_header";
+import Footer from "../components/Footer/Footer";
 
 export default function Avia() {
   return (
-    <div>
-      <Navbar />
-      <AviaPageSearch />
+    <div style={{ width: '100%', maxWidth: '100%', overflow: 'hidden' }}>
+      <Uzbek_header />
+      <SearchSection />
       <Flights />
-      <Uzbek_hotels />
-      <Products />
+      <Footer />
     </div>
   );
 }

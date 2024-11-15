@@ -1,0 +1,113 @@
+@import "../../scss/veriables.scss";
+
+.footer {
+  background-color: #f8f9fa;
+  padding: 60px 0 20px;
+  margin-top: 60px;
+  border-top: 1px solid #eee;
+
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    @media (max-width: 1200px) {
+      max-width: 95%;
+    }
+  }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-bottom: 40px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 480px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .footer-section {
+    h3 {
+      color: #333;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      position: relative;
+      
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 40px;
+        height: 2px;
+        background: $radio-blue-color;
+      }
+    }
+
+    p {
+      color: #666;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      
+      li {
+        color: #666;
+        margin-bottom: 12px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: $radio-blue-color;
+        }
+      }
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+
+      .social-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #666;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: 1px solid #eee;
+
+        &:hover {
+          background: $radio-blue-color;
+          color: white;
+          transform: translateY(-3px);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    
+    p {
+      color: #999;
+      font-size: 14px;
+    }
+  }
+} 

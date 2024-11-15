@@ -19,7 +19,7 @@ const SingleFlight = () => {
     
 
     return (
-        <div className="charter">
+        <div className="single-flight-container">
         <div className="charter_right">
             <div className="ticket_prices">
                 <h4>Avia chiptasi narxi</h4>

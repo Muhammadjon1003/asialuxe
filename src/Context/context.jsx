@@ -24,12 +24,14 @@ const AppProvider = ({ children }) => {
   const [endDate, setEndDate] = useState(null);
   const [filteredId, setFilteredId] = useState(null);
   const [itemSelected, setItemSelected] = useState(false);
-  const [isSearched, setisSearched] = useState(false);
+  const [isSearched, setIsSearched] = useState(false);
   const [redirect, setredirect] = useState(false);
   const [selectedChild, setSelectedChild] = useState("");
   const [allPassengers, setAllPassengers] = useState(null);
   const [selectedClass, setSelectedClass] = useState("");
   const location = useLocation();
+  const [activeTab, setActiveTab] = useState('flights');
+  const [isOneWay, setIsOneWay] = useState(false);
 
   const formattedDate =
     startDate instanceof Date
@@ -135,7 +137,7 @@ const AppProvider = ({ children }) => {
     }
 
     setFilteredId(filteredIds);
-    setisSearched(true)
+    setIsSearched(true)
     setStartDate(null);
     setEndDate(null);
     setDeparturePlace("");
@@ -165,17 +167,32 @@ console.log(redirect);
     setTypingArrival(!!value);
   };
 
-  const filteredFlightsDeparture = data.filter((item) =>
-    item.depart_place.toLowerCase().includes(departurePlace.toLowerCase())
-  );
+  const filteredFlightsDeparture = data
+    .filter((item) =>
+      item.depart_place.toLowerCase().includes(departurePlace.toLowerCase())
+    )
+    // Filter unique departure places
+    .filter((item, index, self) => 
+      index === self.findIndex((t) => t.depart_place === item.depart_place)
+    );
 
-  const filteredFlightsArrival = data.filter((item) =>
-    item.arrive_place.toLowerCase().includes(arrivalPlace.toLowerCase())
-  );
+  const filteredFlightsArrival = data
+    .filter((item) =>
+      item.arrive_place.toLowerCase().includes(arrivalPlace.toLowerCase())
+    )
+    // Filter unique arrival places
+    .filter((item, index, self) => 
+      index === self.findIndex((t) => t.arrive_place === item.arrive_place)
+    );
 
-  const filteredHotelsArrival = hotelData.filter((item) =>
-    item.country.toLowerCase().includes(arrivalPlace.toLowerCase())
-  );
+  const filteredHotelsArrival = hotelData
+    .filter((item) =>
+      item.country.toLowerCase().includes(arrivalPlace.toLowerCase())
+    )
+    // Filter unique countries
+    .filter((item, index, self) => 
+      index === self.findIndex((t) => t.country === item.country)
+    );
 
   const initialPassengerAmount = {
     passengerType: pessengerAmount,
@@ -189,6 +206,11 @@ console.log(redirect);
 
   const decrease = (id) => {
     dispatch({ type: "dec", payload: id });
+  };
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    handleButtonClick();
   };
 
   const funcAndStates = {
@@ -230,8 +252,16 @@ console.log(redirect);
     setSelectedClass,
     location,
     filteredId,
-    isSearched, redirect,
-    url
+    setFilteredId,
+    isSearched,
+    setIsSearched,
+    redirect,
+    url,
+    activeTab,
+    setActiveTab,
+    isOneWay,
+    setIsOneWay,
+    handleSearch,
   };
 
   return (

@@ -1,0 +1,295 @@
+@use "../../../scss/veriables" as *;
+
+.main_title {
+  font-size: 20px;
+  color: $black-text-color;
+  margin: 24px 0 16px;
+  padding-left: 12.5%;
+
+  @media (max-width: 1200px) {
+    padding-left: 10%;
+  }
+
+  @media (max-width: 768px) {
+    padding-left: 7.5%;
+    font-size: 18px;
+  }
+
+  @media (max-width: 576px) {
+    padding-left: 5%;
+    font-size: 16px;
+  }
+}
+
+.flights_wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+
+  @media (max-width: 1200px) {
+    max-width: 95%;
+  }
+}
+
+.places, .months {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (max-width: 1200px) {
+    width: 80%;
+    gap: 8px;
+  }
+
+  @media (max-width: 768px) {
+    width: 85%;
+    gap: 6px;
+  }
+
+  button {
+    width: calc(20% - 10px);
+    height: 40px;
+    font-size: 15px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    background: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: 1200px) {
+      width: calc(25% - 8px);
+      height: 35px;
+      font-size: 13px;
+    }
+    
+    @media (max-width: 768px) {
+      width: calc(33.33% - 6px);
+      height: 30px;
+      font-size: 11px;
+    }
+    
+    @media (max-width: 576px) {
+      width: calc(50% - 6px);
+      height: 25px;
+      font-size: 10px;
+    }
+
+    &:hover {
+      border-color: $radio-blue-color;
+      color: $radio-blue-color;
+    }
+
+    &.active_place {
+      background: $radio-blue-color;
+      color: white;
+      border-color: $radio-blue-color;
+    }
+  }
+}
+
+.flight {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  overflow: hidden;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .date {
+    padding: 12px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    span {
+      font-size: 18px;
+      font-weight: 600;
+      color: $radio-blue-color;
+    }
+
+    p {
+      color: $date-color;
+      font-size: 14px;
+    }
+  }
+
+  .single_flight1 {
+    display: flex;
+    gap: 15px;
+    padding: 15px;
+    margin-bottom: 10px;
+    align-items: start;
+
+    .acronyms {
+      width: 25%;
+    }
+
+    .places_and_price {
+      width: 20%;
+    }
+
+    .times {
+      width: 55%;
+    }
+
+    @media (max-width: 400px) {
+      flex-direction: column;
+      gap: 10px;
+      padding: 10px;
+      justify-content: center;
+      align-items: center;
+
+      .acronyms,
+      .places_and_price,
+      .times {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .times {
+        .seat_availability {
+          justify-content: center;
+        }
+        
+        p {
+          justify-content: center;
+        }
+      }
+    }
+
+    &:not(:only-child) {
+      width: 40%;
+    }
+
+    @media (max-width: 1050px) {
+      width: 90%;
+      grid-template-columns: 1fr;
+      gap: 15px;
+      padding: 15px;
+
+      &:not(:only-child) {
+        width: 90%;
+      }
+    }
+
+    .acronyms, .places_and_price {
+        width: 25%;
+      p {
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        &.gray_text {
+          color: $date-color;
+          font-size: 14px;
+        }
+
+        img.right {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+
+    .times {
+        width: 45%;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      border-radius: 6px;
+      background: white;
+      height: fit-content;
+      min-height: 0;
+      overflow: hidden;
+      width: 100%;
+
+      .seat_availability {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 16px;
+        margin: 0;
+        padding: 0;
+        line-height: 1.2;
+        width: 100%;
+        height: 20px;
+
+        img.right {
+          width: 12px;
+          height: 12px;
+          flex-shrink: 0;
+        }
+
+        p {
+          white-space: nowrap;
+          display: inline-flex;
+          align-items: center;
+          margin: 0;
+        }
+      }
+
+      p {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 16px;
+        margin: 0;
+        padding: 0;
+        line-height: 1.2;
+
+        &.gray_text {
+          color: $date-color;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .places_and_price {
+      min-width: 0;
+      overflow: hidden;
+    }
+  }
+}
+
+.flight-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 80%;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+} 
